@@ -1,0 +1,19 @@
+server:
+  port: 8004
+
+keycloak:
+  auth-server-url: http://localhost:80/auth
+  realm: demo
+  resource: demohomepage
+  bearer-only: false
+  ssl-required: external
+  credentials:
+    secret: a299b987-8b5e-4065-a2d3-d1cbb4356170
+  use-resource-role-mappings: true
+
+auth:
+  scope: openid
+  grant-type: password
+  auth-token-url: http://localhost:80/auth/realms/demo/protocol/openid-connect/token
+  auth-logout-url: http://localhost:80/auth/realms/demo/protocol/openid-connect/logout
+  auth-introspect-url: http://localhost:80/auth/realms/demo/protocol/openid-connect/token/introspect
